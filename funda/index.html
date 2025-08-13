@@ -3,59 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เว็บไซต์ของ ภัศกร กันภัย</title>
-
+    <title>เว็บไซต์ของ นายฟรานโก ทองพลับ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <style>
         *{
             @font-face {
                 font-family: "Prompt";
                 src: url("font/Prompt-Regular.ttf") format("truetype");
             }
+        }
+        body {
+            background-color: #edf6ff;
             font-family: "Prompt";
         }
-
-        body{
-            background-color: #d3e6f8;
-        }
-        h1{
+        h1 {
             color: #780b0b;
             text-align: center;
         }
-        p{
+
+        p {
             font-size: 16px;
             text-align: center;
         }
-        img{
-            width: 200px;
-            height: 200px;
-            border: 10px solid #c65f0a;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            display: block;
-            margin: 20px auto;
-        }
-        table{
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }   
+
+        table {
             width: 80%;
+            border-collapse: collapse;
             margin: 20px auto;
+            background-color: #ffffff;
         }
-        th,td{
+        th, td {
             border: 1px solid #555555;
             padding: 12px;
         }
-        th{
-            background-color: #3498db;
+        th {
+            background-color: #fbb800;
             color: white;
         }
-        tr:nth-child(even){
-            background-color: #a7d1d3;
+        tr:nth-child(even) {
+            background-color: #f7e27a;
+        }
+        #num{
+            font-size: 36px;
+        }
+
+        .rbox{
+            margin-left: 10rem;
+        }
+
+        .circle{
+            width: 200px;
+            height: 200px;
+            border: 10px solid #b55200;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 20px auto;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
     <h1>หน้าแนะนำตัวของฉัน</h1>
 
-    <img src="img/student_id.jpg" width="200" alt="">
-    <p>สวัสดีครับ! นี่คือเว็บแนะนำตัวของฉัน</p>
+    <div class="circle">
+        <img src="img/student_id.jpg" alt="รูปภาพของฉัน" width="200">
+    </div>
+    <p>สวัสดีครับ! นี่คือหน้าเว็บแนะนำตัวของฉัน</p>
 
     <table border="1">
         <thead>
@@ -64,30 +86,29 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+ 			<tr>
                 <td>รหัสประจำตัว</td>
-                <td>683380666-1</td>
+                <td>[ใส่รหัสประจำตัวของคุณ 683380666-1]</td>
             </tr>
             <tr>
                 <td>ชื่อ</td>
-                <td>ภัศกร กันภัย</td>
+                <td>นายภัศกร กันภัย</td>
             </tr>
             <tr>
                 <td>อีเมล</td>
-                <td>pussakon.k@kkumail.com</td>
+                <td>[pussakon.k@kkumail.com]</td>
             </tr>
             <tr>
                 <td>ความสนใจ</td>
-                <td>เล่นเกม, ดูการ์ตูน, ฟังเพลง</td>
+                <td>[เล่นเกม, ดูหนัง, เล่นกีฬา]</td>
             </tr>
         </tbody>
     </table>
 
-    <div class="rbox">
+      <div class="rbox">
         <button onclick="start_random()">กดเพื่อสุ่มตัวเลข 6 หลัก</button>
         <div id="num">------</div>
     </div>
-
     <script>
         let n = 0;
         let numElem = document.getElementById("num");
@@ -98,13 +119,14 @@
             next_number();
         }
         function next_number(){
-            var r = Math.round(Math.random()*999999)+"";
+            var r =  Math.round(Math.random()*999999)+"";
             numElem.innerText = r.padStart(3,'0');
             n--;
             if(n>0){
-                setTimeout(next_number, 300-n);
+               setTimeout(next_number,300-n); 
             }
         }
     </script>
+
 </body>
 </html>
